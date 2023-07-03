@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ProjectCard from './ProjectCard';
 import { checkboxOptions, datas } from "../data/data";
@@ -111,34 +111,59 @@ const BtnShow = styled.button`
 
 export default function ProjectComponent() {
     const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
+    const [selectedFilters, setSelectedFilters] = useState({});
     const [selectLevel, setSelectLevel] = useState('Beginner');
     const [selectShow, setSelectShow] = useState(10);
 
 
     const handleCheckboxChange = (e, title) => {
         const { value, checked } = e.target;
+
         setSelectedCheckboxes((prevCheckboxes) => {
             if (checked) {
+                // Add the selected checkbox to the list
                 return [...prevCheckboxes, { title, value }];
             } else {
+                // Remove the deselected checkbox from the list
                 return prevCheckboxes.filter(
-                    (checkbox) => checkbox.title !== title || checkbox.value !== value
+                    (checkbox) => !(checkbox.title === title && checkbox.value === value)
                 );
             }
         });
     };
 
+    useEffect(() => {
+        // Update the selected filters whenever the selected checkboxes change
+        const filters = {};
+
+        selectedCheckboxes.forEach((checkbox) => {
+            const { title, value } = checkbox;
+
+            if (filters[title]) {
+                // Add the value to an existing filter title
+                filters[title].push(value);
+            } else {
+                // Create a new filter title and initialize it with the value
+                filters[title] = [value];
+            }
+        });
+
+        setSelectedFilters(filters);
+    }, [selectedCheckboxes]);
+
+    // (checkbox) => checkbox.title !== title || checkbox.value !== value
+
     const filteredDatas = datas.filter((data) =>
-        selectedCheckboxes.every((checkbox) => {
-            switch (checkbox.title) {
+        Object.entries(selectedFilters).every(([title, values]) => {
+            switch (title) {
                 case 'Subscription':
-                    return data.subscription === checkbox.value;
+                    return values.includes('All') || values.includes(data.subscription);
                 case 'Activity Type':
-                    return data.activity_type === checkbox.value;
+                    return values.includes('All') || values.includes(data.activity_type);
                 case 'Year Level':
-                    return data.year_level === checkbox.value;
+                    return values.includes('All') || values.includes(data.year_level);
                 case 'Subject Matther':
-                    return data.subject_matter === checkbox.value;
+                    return values.includes('All') || values.includes(data.subject_matter);
                 default:
                     return true;
             }
@@ -147,13 +172,6 @@ export default function ProjectComponent() {
 
     // const projectsCount = filteredDatas.slice(0, selectShow);
     const projectsCount = selectShow === 'All' ? filteredDatas : filteredDatas.slice(0, parseInt(selectShow));
-
-
-
-    const handleLevelChange = (year_level) => {
-        setSelectLevel(year_level);
-    };
-
 
 
     return (
