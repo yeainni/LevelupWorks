@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 1256px;
+    display: grid;
+    /* width: 1256px; */
     margin: 50px 0;
+    grid-template-columns: repeat(3, minmax(310px, 1fr));
+    justify-items: center;
+    grid-template-rows: minmax(340px, auto);
+    grid-gap: 2rem 5rem;
 `;
 
 const ListCard = styled.li`
@@ -17,7 +18,7 @@ const ListCard = styled.li`
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
     height: 340px;
-    width: 330px;
+    width: 310px;
     margin-bottom: 100px;
     `;
 
