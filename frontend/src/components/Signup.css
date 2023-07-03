@@ -1,0 +1,104 @@
+.SignupBox {
+  /* backdrop-filter: blur(5px); */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.Signup {
+  max-width: 950px;
+  width: 100%;
+  height: 870px;
+  position: fixed;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 18 0 rgba(0, 0, 0, 0.75);
+  display: flex;
+  padding-right: 8px;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: space-around; */
+}
+
+.Signup hr {
+  margin: 0 90px;
+}
+
+.loginSignup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginSignup h1 {
+  font-family: "Nunito", sans-serif;
+  font-size: 42px;
+  margin-top: 30px;
+  font-weight: 900;
+}
+
+.loginSignup img {
+  width: 300px;
+  height: 300px;
+}
+
+.loginSignupInput {
+  width: 230px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+.loginSignupInput h2 {
+  font-size: 24px;
+  display: inline-block;
+  border-bottom: 4px solid #43c0f6;
+  margin-bottom: 50px;
+  border-radius: 3px;
+}
+
+.loginSignup input {
+  width: 200px;
+  color: #a29f9f;
+  font-size: 14px;
+  border: 1px solid #a29f9f;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-bottom: 34px;
+}
+
+.loginSignupInput .pinkBtn {
+  font-family: "Nunito", sans-serif;
+  width: 175px;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  background-color: #f91c85;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.close {
+  position: fixed;
+  width: 27px;
+  height: 27px;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: none;
+}
+
+.close img {
+  width: 100%;
+  height: 100%;
+}

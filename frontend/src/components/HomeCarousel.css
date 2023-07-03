@@ -1,0 +1,30 @@
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-hidden {
+    display: none;
+}
+
+.indicators {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.indicator {
+    background-color: #707070;
+    height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    border: solid 1.5px #707070;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.indicator-inactive {
+    background-color: white;
+}
