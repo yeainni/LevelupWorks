@@ -2,180 +2,190 @@ export const datas = [
     {
         id: 1,
         name: 'Introduction',
-        project_pic: '../../public/projects/project01.png',
-        activity_type: 'Animation',
+        project_pic: '../..//projects/project01.png',
+        activity_type: 'Augented Reality',
         year_level: 'Beginner',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
     },
     {
         id: 2,
         name: 'My Birthday',
-        project_pic: '../../public/projects/project02.png',
+        project_pic: '../..//projects/project02.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Free',
         subject_matter: 'Maths',
-        tags: ["Free", "Animation", "Beginner", "Maths"],
-
     },
     {
         id: 3,
         name: '10 Block Challenge',
-        project_pic: '../../public/projects/project03.png',
+        project_pic: '../..//projects/project03.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Free',
         subject_matter: 'Science Language',
-        tags: ["Free", "Animation", "Beginner", "Science Language"],
-
     },
     {
         id: 4,
         name: 'Build a band',
-        project_pic: '../../public/projects/project04.png',
+        project_pic: '../..//projects/project04.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Premium',
         subject_matter: 'Computer Science',
-        tags: ["Premium", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 5,
         name: 'The bear and the monkey',
-        project_pic: '../../public/projects/project05.png',
+        project_pic: '../..//projects/project05.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 6,
         name: 'Debugging',
-        project_pic: '../../public/projects/project06.png',
+        project_pic: '../..//projects/project06.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Premium',
         subject_matter: 'Computer Science',
-        tags: ["Premium", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 7,
         name: 'About Me',
-        project_pic: '../../public/projects/project07.png',
+        project_pic: '../..//projects/project07.png',
         activity_type: 'Animation',
-        year_level: 'Beginner',
+        year_level: 'Intermediate',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 8,
         name: 'I am here!',
-        project_pic: '../../public/projects/project08.png',
+        project_pic: '../..//projects/project08.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Premium',
         subject_matter: 'Computer Science',
-        tags: ["Premium", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 9,
         name: 'Funny faces',
-        project_pic: '../../public/projects/project09.png',
+        project_pic: '../..//projects/project09.png',
         activity_type: 'Animation',
-        year_level: 'Beginner',
+        year_level: 'Advanced',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 10,
         name: 'It tickles!',
-        project_pic: '../../public/projects/project10.png',
+        project_pic: '../..//projects/project10.png',
         activity_type: 'Animation',
-        year_level: 'Beginner',
+        year_level: 'Intermediate',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 11,
         name: 'Penguin in a Dessert',
-        project_pic: '../../public/projects/project11.png',
+        project_pic: '../..//projects/project11.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 12,
         name: 'Time Travel',
-        project_pic: '../../public/projects/project12.png',
+        project_pic: '../..//projects/project12.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 13,
         name: 'It tickles!',
-        project_pic: '../../public/projects/project13.png',
+        project_pic: '../..//projects/project13.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Premium',
         subject_matter: 'Computer Science',
-        tags: ["Premium", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 14,
         name: 'The Lion and the Mouse Part 1',
-        project_pic: '../../public/projects/project14.png',
+        project_pic: '../..//projects/project14.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Free", "Animation", "Beginner", "Computer Science"],
-
     },
     {
         id: 15,
         name: 'The Lion and the Mouse Part 2',
-        project_pic: '../../public/projects/project15.png',
+        project_pic: '../..//projects/project15.png',
         activity_type: 'Animation',
-        year_level: 'Premium',
+        year_level: 'Advanced',
         course: '',
         subscription: 'Free',
         subject_matter: 'Computer Science',
-        tags: ["Premium", "Animation", "Beginner", "Computer Science"],
-
     },
-]
+];
+
+
+export const checkboxOptions = [
+    {
+        title: 'Subscription',
+        options: [
+            { label: 'Free', value: 'Free' },
+            { label: 'Premium', value: 'Premium' }
+        ],
+    },
+    {
+        title: 'Activity Type',
+        options: [
+            { label: "Animation", value: "Animation" },
+            { label: "Game", value: "Game" },
+            { label: "Chatbot", value: "Chatbot" },
+            { label: "Augented Reality", value: "Augented Reality" }
+        ],
+    },
+    {
+        title: 'Year Level',
+        options: [
+            { label: '1 - 4', value: "Beginner" },
+            { label: '5 - 6', value: "Intermediate" },
+            { label: '7 - 8', value: "Advanced" },
+            { label: '9 - 13', value: "Expert" }
+        ],
+    },
+    {
+        title: 'Subject Matther',
+        options: [
+            { label: "Computer Science", value: "Computer Science" },
+            { label: "Maths", value: "Maths" },
+            { label: "Science Language", value: "Science Language" },
+            { label: "Art", value: "Art" },
+            { label: "Music", value: "Music" }
+        ],
+    },
+];

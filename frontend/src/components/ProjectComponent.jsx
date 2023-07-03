@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProjectCard from './ProjectCard';
+import { checkboxOptions, datas } from "../data/data";
 
 const ProjectContainer = styled.div`
     display  : flex;
@@ -109,203 +110,9 @@ const BtnShow = styled.button`
 
 
 export default function ProjectComponent() {
-    const datas = [
-        {
-            id: 1,
-            name: 'Introduction',
-            project_pic: '../..//projects/project01.png',
-            activity_type: 'Augented Reality',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 2,
-            name: 'My Birthday',
-            project_pic: '../..//projects/project02.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Maths',
-        },
-        {
-            id: 3,
-            name: '10 Block Challenge',
-            project_pic: '../..//projects/project03.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Science Language',
-        },
-        {
-            id: 4,
-            name: 'Build a band',
-            project_pic: '../..//projects/project04.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Premium',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 5,
-            name: 'The bear and the monkey',
-            project_pic: '../..//projects/project05.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 6,
-            name: 'Debugging',
-            project_pic: '../..//projects/project06.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Premium',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 7,
-            name: 'About Me',
-            project_pic: '../..//projects/project07.png',
-            activity_type: 'Animation',
-            year_level: 'Intermediate',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 8,
-            name: 'I am here!',
-            project_pic: '../..//projects/project08.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Premium',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 9,
-            name: 'Funny faces',
-            project_pic: '../..//projects/project09.png',
-            activity_type: 'Animation',
-            year_level: 'Advanced',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 10,
-            name: 'It tickles!',
-            project_pic: '../..//projects/project10.png',
-            activity_type: 'Animation',
-            year_level: 'Intermediate',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 11,
-            name: 'Penguin in a Dessert',
-            project_pic: '../..//projects/project11.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 12,
-            name: 'Time Travel',
-            project_pic: '../..//projects/project12.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 13,
-            name: 'It tickles!',
-            project_pic: '../..//projects/project13.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Premium',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 14,
-            name: 'The Lion and the Mouse Part 1',
-            project_pic: '../..//projects/project14.png',
-            activity_type: 'Animation',
-            year_level: 'Beginner',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-        {
-            id: 15,
-            name: 'The Lion and the Mouse Part 2',
-            project_pic: '../..//projects/project15.png',
-            activity_type: 'Animation',
-            year_level: 'Advanced',
-            course: '',
-            subscription: 'Free',
-            subject_matter: 'Computer Science',
-        },
-    ];
-
-
-    const checkboxOptions = [
-        {
-            title: 'Subscription',
-            options: [
-                { label: 'Free', value: 'Free' },
-                { label: 'Premium', value: 'Premium' }
-            ],
-        },
-        {
-            title: 'Activity Type',
-            options: [
-                { label: "Animation", value: "Animation" },
-                { label: "Game", value: "Game" },
-                { label: "Chatbot", value: "Chatbot" },
-                { label: "Augented Reality", value: "Augented Reality" }
-            ],
-        },
-        {
-            title: 'Year Level',
-            options: [
-                { label: '1 - 4', value: "Beginner" },
-                { label: '5 - 6', value: "Intermediate" },
-                { label: '7 - 8', value: "Advanced" },
-                { label: '9 - 13', value: "Expert" }
-            ],
-        },
-        {
-            title: 'Subject Matther',
-            options: [
-                { label: "Computer Science", value: "Computer Science" },
-                { label: "Maths", value: "Maths" },
-                { label: "Science Language", value: "Science Language" },
-                { label: "Art", value: "Art" },
-                { label: "Music", value: "Music" }
-            ],
-        },
-    ];
-
-
     const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
-    const [projectShow, setProjectShow] = useState(10);
     const [selectLevel, setSelectLevel] = useState('Beginner');
-    const [selectShow, setSelectShow] = useState('10');
+    const [selectShow, setSelectShow] = useState(10);
 
 
     const handleCheckboxChange = (e, title) => {
@@ -338,7 +145,9 @@ export default function ProjectComponent() {
         })
     ).filter((data) => data.year_level === selectLevel);
 
-    const projectsCount = filteredDatas.slice(0, projectShow);
+    // const projectsCount = filteredDatas.slice(0, selectShow);
+    const projectsCount = selectShow === 'All' ? filteredDatas : filteredDatas.slice(0, parseInt(selectShow));
+
 
 
     const handleLevelChange = (year_level) => {
@@ -351,24 +160,6 @@ export default function ProjectComponent() {
         <ProjectContainer>
             <SidebarWrapper>
                 {checkboxOptions.map((option) => (
-                    // <SidebarContent>
-                    //     <Title>YEAR LEVEL</Title>
-                    //     <Hr />
-                    //     {checkboxOptions
-                    //         .find((option) => option.title === 'Year Level')
-                    //         .options.map((checkbox) => (
-                    //             <CheckWrapper key={checkbox.value}>
-                    //                 <Checkbox
-                    //                     type="checkbox"
-                    //                     checked={checkbox.value === selectLevel}
-                    //                     onChange={() => handleLevelChange(checkbox.value)}
-                    //                     value={checkbox.value}
-                    //                     id={checkbox.value}
-                    //                 />
-                    //                 <Label htmlFor={checkbox.value}>{checkbox.label}</Label>
-                    //             </CheckWrapper>
-                    //         ))}
-                    // </SidebarContent>
                     <SidebarContent key={option.title}>
                         <Title>{option.title.toUpperCase()}</Title>
                         <Hr />
@@ -421,27 +212,24 @@ export default function ProjectComponent() {
 
                     <BtnWrap>
                         <BtnShow
-                            active={projectShow === '5'}
+                            active={selectShow === '5'}
                             onClick={() => {
-                                setProjectShow(5);
                                 setSelectShow('5');
                             }}
                         >
                             5
                         </BtnShow>
                         <BtnShow
-                            active={projectShow === '10'}
+                            active={selectShow === '10'}
                             onClick={() => {
-                                setProjectShow(10);
                                 setSelectShow('10');
                             }}
                         >
                             10
                         </BtnShow>
                         <BtnShow
-                            active={projectShow === 'All'}
+                            active={selectShow === 'All'}
                             onClick={() => {
-                                setProjectShow(filteredDatas.length);
                                 setSelectShow('All');
                             }}
                         >
@@ -451,12 +239,6 @@ export default function ProjectComponent() {
                 </BtnList>
                 <ProjectCard filteredDatas={projectsCount} />
             </div>
-
-            {/* <ul>
-        {filteredlevel.map((data) => (
-        <li key={data.id}>{data.image}</li>
-        ))}
-      </ul> */}
         </ProjectContainer >
 
     );
