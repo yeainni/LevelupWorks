@@ -112,8 +112,8 @@ const BtnShow = styled.button`
 export default function ProjectComponent() {
     const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
     const [selectedFilters, setSelectedFilters] = useState({});
-    const [selectLevel, setSelectLevel] = useState('Beginner');
-    const [selectShow, setSelectShow] = useState(10);
+    const [selectLevel, setSelectLevel] = useState('');
+    const [selectShow, setSelectShow] = useState('All');
 
 
     const handleCheckboxChange = (e, title) => {
@@ -168,7 +168,17 @@ export default function ProjectComponent() {
                     return true;
             }
         })
-    ).filter((data) => data.year_level === selectLevel);
+        // this make initial value
+        // 2  ).filter((data) => data.year_level === selectLevel);
+    ).filter((data) => {
+        if (selectLevel === '') {
+            // If no specific level is selected, include all data
+            return true;
+        } else {
+            // Filter based on the selected level
+            return data.year_level === selectLevel;
+        }
+    });
 
     // const projectsCount = filteredDatas.slice(0, selectShow);
     const projectsCount = selectShow === 'All' ? filteredDatas : filteredDatas.slice(0, parseInt(selectShow));
@@ -208,21 +218,24 @@ export default function ProjectComponent() {
                     <BtnWrap>
                         <BtnShow
                             active={selectLevel === 'Beginner'}
-                            onClick={() => setSelectLevel('Beginner')}
-                        // className={selectedLevel === "Beginner" ? "active" : ""}
+                            // onClick={() => setSelectLevel('Beginner')}
+                            // 2  className={selectedLevel === "Beginner" ? "active" : ""}
+                            onClick={() => setSelectLevel(selectLevel === 'Beginner' ? '' : 'Beginner')}
 
                         >
                             BEGINNER
                         </BtnShow>
                         <BtnShow
                             active={selectLevel === 'Intermediate'}
-                            onClick={() => setSelectLevel('Intermediate')}
+                            // 2  onClick={() => setSelectLevel('Intermediate')}
+                            onClick={() => setSelectLevel(selectLevel === 'Intermediate' ? '' : 'Intermediate')}
                         >
                             INTERMEDIATE
                         </BtnShow>
                         <BtnShow
                             active={selectLevel === 'Advanced'}
-                            onClick={() => setSelectLevel('Advanced')}
+                            // 2  onClick={() => setSelectLevel('Advanced')}
+                            onClick={() => setSelectLevel(selectLevel === 'Advanced' ? '' : 'Advanced')}
                         >
                             ADVANCED
                         </BtnShow>

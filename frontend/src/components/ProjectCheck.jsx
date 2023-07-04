@@ -34,22 +34,22 @@ const Checkbox = styled.input`
 
 
 export default function ProjectCheck() {
-    const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
+    const [selectedCheckboxe, setSelectedCheckboxe] = useState([]);
 
     const handleCheckboxChange = (e) => {
         const { value, checked } = e.target;
         if (checked) {
-            setSelectedCheckboxes([...selectedCheckboxes, value]);
+            setSelectedCheckboxe([...selectedCheckboxe, value]);
         } else {
-            setSelectedCheckboxes(
-                selectedCheckboxes.filter((checkbox) => checkbox !== value)
+            setSelectedCheckboxe(
+                selectedCheckboxe.filter((checkbox) => checkbox !== value)
             );
         }
     };
 
 
     const filteredDatas = datas.filter((data) =>
-        selectedCheckboxes.every((checkbox) => data.tags.includes(checkbox))
+        selectedCheckboxe.every((checkbox) => data.tags.includes(checkbox))
     );
 
 
@@ -62,7 +62,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Free">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Free")}
+                        checked={selectedCheckboxe.includes("Free")}
                         onChange={handleCheckboxChange}
                         value="Free"
                         id="Free"
@@ -73,7 +73,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Premium">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Premium")}
+                        checked={selectedCheckboxe.includes("Premium")}
                         onChange={handleCheckboxChange}
                         value="Premium"
                         id="Preminum"
@@ -87,7 +87,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Animation">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Animation")}
+                        checked={selectedCheckboxe.includes("Animation")}
                         onChange={handleCheckboxChange}
                         value="Animation"
                         id="Animation"
@@ -98,7 +98,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Game">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Game")}
+                        checked={selectedCheckboxe.includes("Game")}
                         onChange={handleCheckboxChange}
                         value="Game"
                         id="Game"
@@ -109,7 +109,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Chatbot">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Chatbot")}
+                        checked={selectedCheckboxe.includes("Chatbot")}
                         onChange={handleCheckboxChange}
                         value="Chatbot"
                         id="Chatbot"
@@ -120,7 +120,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Augmented Reality">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Augmented Reality")}
+                        checked={selectedCheckboxe.includes("Augmented Reality")}
                         onChange={handleCheckboxChange}
                         value="Augmented Reality"
                         id="Augmented Reality"
@@ -134,7 +134,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Beginner">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Beginner")}
+                        checked={selectedCheckboxe.includes("Beginner")}
                         onChange={handleCheckboxChange}
                         value="Beginner"
                         id="Beginner"
@@ -145,7 +145,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Intermediate">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Intermediate")}
+                        checked={selectedCheckboxe.includes("Intermediate")}
                         onChange={handleCheckboxChange}
                         value="Intermediate"
                         id="Intermediate"
@@ -156,7 +156,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Advance">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Advance")}
+                        checked={selectedCheckboxe.includes("Advance")}
                         onChange={handleCheckboxChange}
                         value="Advance"
                         id="Advance"
@@ -167,7 +167,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Expert">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Expert")}
+                        checked={selectedCheckboxe.includes("Expert")}
                         onChange={handleCheckboxChange}
                         value="Expert"
                         id="Expert"
@@ -181,7 +181,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Computer Science">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Computer Science")}
+                        checked={selectedCheckboxe.includes("Computer Science")}
                         onChange={handleCheckboxChange}
                         value="Computer Science"
                         id="Computer Science"
@@ -192,7 +192,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Maths">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Maths")}
+                        checked={selectedCheckboxe.includes("Maths")}
                         onChange={handleCheckboxChange}
                         value="Maths"
                         id="Maths"
@@ -203,7 +203,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Science Language">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Science Language")}
+                        checked={selectedCheckboxe.includes("Science Language")}
                         onChange={handleCheckboxChange}
                         value="Science Language"
                         id="Science Language"
@@ -214,7 +214,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Art">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Art")}
+                        checked={selectedCheckboxe.includes("Art")}
                         onChange={handleCheckboxChange}
                         value="Art"
                         id="Art"
@@ -225,7 +225,7 @@ export default function ProjectCheck() {
                 <Label htmlFor="Music">
                     <Checkbox
                         type="checkbox"
-                        checked={selectedCheckboxes.includes("Music")}
+                        checked={selectedCheckboxe.includes("Music")}
                         onChange={handleCheckboxChange}
                         value="Music"
                         id="Music"

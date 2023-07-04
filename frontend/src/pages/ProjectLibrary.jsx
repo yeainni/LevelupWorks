@@ -40,8 +40,7 @@ export default function ProjectLibrary() {
         <div>
             <NavBar />
             <Container>
-                <ProjectComponent/>
-                {/* <ProjectCard filteredDatas={filteredDatas}/> */}
+                <ProjectComponent />
                 <BttBtn>
                     <BackToTop styled onClick={() => {
                         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
