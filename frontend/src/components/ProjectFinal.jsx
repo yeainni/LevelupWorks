@@ -163,7 +163,9 @@ export default function ProjectFinal() {
                         data.activity_type.toLowerCase().split(',').map((a) => a.trim()).includes(activity.toLowerCase())
                     );
                 case 'Year Level':
-                    return values.includes('All') || values.includes(data.year_level.toString());
+                    return values.includes('All') || values.some((value) =>
+                        value.split(',').map((y) => y.trim()).includes(data.year_level.toString())
+                    );
                 case 'Subject Matter':
                     return values.includes('All') || values.some((subject) =>
                         data.subject_matter.toLowerCase().split(',').map((s) => s.trim()).includes(subject.toLowerCase())
