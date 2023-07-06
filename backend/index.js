@@ -32,8 +32,10 @@ app.get('/student', (req, res) => {
         });
 });
 
+
 app.get('/student/:id', (req, res) => {
-    pool.query('SELECT * FROM student WHERE ID= ?',
+    pool.query('SELECT student.*, teacher.name AS teacher_name FROM student JOIN teacher ON student.teacher_id = teacher.teacher_id WHERE student.student_id= ?;',
+
         [req.params.id],
         (err, result) => {
             if (err) {
@@ -45,6 +47,7 @@ app.get('/student/:id', (req, res) => {
             }
         });
 });
+
 
 app.get('/projectlibrary', (req, res) => {
     pool.query('SELECT * FROM project',
