@@ -1,51 +1,88 @@
 const express = require('express');
+const mysql = require('mysql2');
+const cors = require('cors');
 const app = express();
-const customers = require('./customers');
-// Define your routes and middleware here
+require('dotenv').config();
 
-// Start the server
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.use(express.json());
+app.use(cors());
+
+const pool = mysql.createPool({
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
+})
+
+const port = process.env.PORT;
+
+app.listen(4000, () => {
+    console.log(`server is running on port ${port}`);
+})
+
+app.get('/student', (req, res) => {
+    pool.query('SELECT * FROM student',
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("STUDENT PAGEERRORRRRRRR!!!!");
+            } else {
+                res.send(result);
+            }
+        });
+});
+
+app.get('/student/:id', (req, res) => {
+    pool.query('SELECT * FROM student WHERE ID= ?',
+        [req.params.id],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Student ID ERROR!!");
+            } else {
+                res.send(result);
+                console.log(result)
+            }
+        });
+});
+
+app.get('/projectlibrary', (req, res) => {
+    pool.query('SELECT * FROM project',
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("No project to be shown");
+            } else {
+                res.send(result);
+                console.log(result)
+            }
+        });
 });
 
 
-app.get('/customers/:id', (req, res) => {
-    const customerId = parseInt(req.params.id); // Parse the ID parameter as an integer
-
-    // Find the customer with the matching ID
-    const customer = customers.find((customer) => customer.id === customerId);
-
-    if (customer) {
-        // If a customer is found, send their data as JSON
-        res.json(customer);
-    } else {
-        // If no customer is found, send an error message
-        res.status(404).json({ message: 'Customer not found' });
-    }
+app.get('/teacher', (req, res) => {
+    pool.query('SELECT * FROM teacher',
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Teacher PAGE ERROR!! ERROR!! ERRORRRRRRR!!!!");
+            } else {
+                res.send(result);
+            }
+        });
 });
 
 
-// app.get('/customers/:id', (req, res) => {
-//     // Retrieve the customer ID from the request parameters
-//     const customerId = req.params.id;
-
-//     // Perform a database query or any other necessary logic to fetch the customer data
-//     // based on the provided ID
-
-//     // Assuming you have the customer data available, extract the first name and last name
-//     const customer = {
-//         id: customerId,
-//         firstName: 'Terry',
-//         // lastName: 'Doe',
-//         // Include other customer data properties as needed
-//     };
-
-//     // Create a new object with only the first name and last name properties
-//     const response = {
-//         firstName: customer.firstName,
-//         lastName: customer.lastName,
-//     };
-
-//     // Send the response with first name and last name only as a JSON response
-//     res.json(response);
-// });
+app.get('/teacher/:id', (req, res) => {
+    pool.query('SELECT * FROM teacher WHERE ID= ?',
+        [req.params.id],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("Teacher ID ERROR!!");
+            } else {
+                res.send(result);
+                console.log(result)
+            }
+        });
+});

@@ -1,11 +1,11 @@
 // import ProjectCheck from '../Components/ProjectCheck';
-import ProjectComponent from '../components/ProjectComponent';
+import ProjectFinal from '../components/ProjectFinal';
 import styled from "styled-components";
 import NavBar from "../components/Navbar";
 import Footer from '../components/Footer';
 
 const Container = styled.div`
-    padding: 0 11%;
+    padding: 0 12%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -40,7 +40,7 @@ export default function ProjectLibrary() {
         <div>
             <NavBar />
             <Container>
-                <ProjectComponent />
+                <ProjectFinal />
                 <BttBtn>
                     <BackToTop styled onClick={() => {
                         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

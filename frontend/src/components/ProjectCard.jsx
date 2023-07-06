@@ -44,12 +44,12 @@ const CardInfo = styled.div`
 export default function ProjectCard({ filteredDatas }) {
     return (
         <CardContainer>
-            {filteredDatas.map((data) => (
-                <ListCard key={data.id}>
+            {Array.isArray(filteredDatas) && filteredDatas.map((data, index) => (
+                <ListCard key={data.id || index}>
                     <img src={data.project_pic} alt={data.name} />
                     <CardBox>
                         <CardTitle>{data.name} </CardTitle>
-                        <CardInfo>{data.year_level.toUpperCase()} | {data.subject_matter}</CardInfo>
+                        <CardInfo>{data.course.toUpperCase()} | {data.subject_matter.charAt(0).toUpperCase() + data.subject_matter.slice(1).split(',')[0]}</CardInfo>
                     </CardBox>
                 </ListCard>
             ))}

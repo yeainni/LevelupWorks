@@ -2,7 +2,7 @@ export const datas = [
     {
         id: 1,
         name: 'Introduction',
-        project_pic: '../..//projects/project01.png',
+        project_pic: '/images/projects/project01.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
@@ -12,7 +12,7 @@ export const datas = [
     {
         id: 2,
         name: 'My Birthday',
-        project_pic: '../..//projects/project02.png',
+        project_pic: '/images/projects/project02.png',
         activity_type: 'Augented Reality',
         year_level: 'Beginner',
         course: '',
@@ -22,7 +22,7 @@ export const datas = [
     {
         id: 3,
         name: '10 Block Challenge',
-        project_pic: '../..//projects/project03.png',
+        project_pic: '/images/projects/project03.png',
         activity_type: 'Game',
         year_level: 'Beginner',
         course: '',
@@ -32,7 +32,7 @@ export const datas = [
     {
         id: 4,
         name: 'Build a band',
-        project_pic: '../..//projects/project04.png',
+        project_pic: '/images/projects/project04.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
@@ -42,7 +42,7 @@ export const datas = [
     {
         id: 5,
         name: 'The bear and the monkey',
-        project_pic: '../..//projects/project05.png',
+        project_pic: '/images/projects/project05.png',
         activity_type: 'Game',
         year_level: 'Beginner',
         course: '',
@@ -52,7 +52,7 @@ export const datas = [
     {
         id: 6,
         name: 'Debugging',
-        project_pic: '../..//projects/project06.png',
+        project_pic: '/images/projects/project06.png',
         activity_type: 'Game',
         year_level: 'Beginner',
         course: '',
@@ -62,7 +62,7 @@ export const datas = [
     {
         id: 7,
         name: 'About Me',
-        project_pic: '../..//projects/project07.png',
+        project_pic: '/images/projects/project07.png',
         activity_type: 'Animation',
         year_level: 'Intermediate',
         course: '',
@@ -72,7 +72,7 @@ export const datas = [
     {
         id: 8,
         name: 'I am here!',
-        project_pic: '../..//projects/project08.png',
+        project_pic: '/images/projects/project08.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
@@ -82,7 +82,7 @@ export const datas = [
     {
         id: 9,
         name: 'Funny faces',
-        project_pic: '../..//projects/project09.png',
+        project_pic: '/images/projects/project09.png',
         activity_type: 'Animation',
         year_level: 'Advanced',
         course: '',
@@ -92,7 +92,7 @@ export const datas = [
     {
         id: 10,
         name: 'It tickles!',
-        project_pic: '../..//projects/project10.png',
+        project_pic: '/images/projects/project10.png',
         activity_type: 'Animation',
         year_level: 'Intermediate',
         course: '',
@@ -102,7 +102,7 @@ export const datas = [
     {
         id: 11,
         name: 'Penguin in a Dessert',
-        project_pic: '../..//projects/project11.png',
+        project_pic: '/images/projects/project11.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
@@ -112,7 +112,7 @@ export const datas = [
     {
         id: 12,
         name: 'Time Travel',
-        project_pic: '../..//projects/project12.png',
+        project_pic: '/images/projects/project12.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
@@ -122,7 +122,7 @@ export const datas = [
     {
         id: 13,
         name: 'It tickles!',
-        project_pic: '../..//projects/project13.png',
+        project_pic: '/images/projects/project13.png',
         activity_type: 'Chatbot',
         year_level: 'Beginner',
         course: '',
@@ -132,7 +132,7 @@ export const datas = [
     {
         id: 14,
         name: 'The Lion and the Mouse Part 1',
-        project_pic: '../..//projects/project14.png',
+        project_pic: '/images/projects/project14.png',
         activity_type: 'Animation',
         year_level: 'Beginner',
         course: '',
@@ -142,7 +142,7 @@ export const datas = [
     {
         id: 15,
         name: 'The Lion and the Mouse Part 2',
-        project_pic: '../..//projects/project15.png',
+        project_pic: '/images/projects/project15.png',
         activity_type: 'Chatbot',
         year_level: 'Advanced',
         course: '',
@@ -172,14 +172,14 @@ export const checkboxOptions = [
     {
         title: 'Year Level',
         options: [
-            { label: '1 - 4', value: "Beginner" },
-            { label: '5 - 6', value: "Intermediate" },
-            { label: '7 - 8', value: "Advanced" },
-            { label: '9 - 13', value: "Expert" }
+            { label: '1 - 4', value: "1, 2, 3, 4" },
+            { label: '5 - 6', value: "5, 6" },
+            { label: '7 - 8', value: "7, 8" },
+            { label: '9 - 13', value: "9, 10, 11, 12, 13" }
         ],
     },
     {
-        title: 'Subject Matther',
+        title: 'Subject Matter',
         options: [
             { label: "Computer Science", value: "Computer Science" },
             { label: "Maths", value: "Maths" },

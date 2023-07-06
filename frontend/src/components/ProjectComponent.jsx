@@ -162,7 +162,7 @@ export default function ProjectComponent() {
                     return values.includes('All') || values.includes(data.activity_type);
                 case 'Year Level':
                     return values.includes('All') || values.includes(data.year_level);
-                case 'Subject Matther':
+                case 'Subject Matter':
                     return values.includes('All') || values.includes(data.subject_matter);
                 default:
                     return true;
@@ -196,7 +196,9 @@ export default function ProjectComponent() {
                                 <Checkbox
                                     type="checkbox"
                                     checked={selectedCheckboxes.some(
-                                        (item) => item.title === option.title && item.value === checkbox.value
+                                        (item) =>
+                                            item.title === option.title &&
+                                            item.value === checkbox.value
                                     )}
                                     onChange={(e) => handleCheckboxChange(e, option.title)}
                                     value={checkbox.value}
@@ -275,3 +277,8 @@ export default function ProjectComponent() {
     );
 }
 
+
+
+// This page useEffect hook is responsible for updating the selected filters whenever the selected checkboxes change. It creates an object called filters that stores the selected filters based on the checkboxes. Each filter title (e.g., 'Subscription', 'Activity Type') is mapped to an array of selected values. This filters object is then stored in the selectedFilters state. This effect runs whenever selectedCheckboxes change.
+
+// Final page useEffect hook is responsible for applying the filters and updating the filteredDatas state. It calls the applyFilters function, which iterates over the selected checkboxes and applies the corresponding filters to the projectData. Additionally, it applies an additional filter based on the selectCourse state. The resulting filtered projects are stored in the filteredProjects state. This effect runs whenever selectedCheckboxes or selectCourse change.
