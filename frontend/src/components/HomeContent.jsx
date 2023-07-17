@@ -293,7 +293,6 @@ export default function HomeContent() {
                     <div className="homeBottomBtn">
                         <button className="blueBtn">ENQUIRE NOW</button>
                         <button className="pinkBtn" onClick={toggleModal}>SIGN UP</button>
-                        <Signup isOpen={openModal} onClose={toggleModal} />
                     </div>
                 </div>
             </div>

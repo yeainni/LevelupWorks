@@ -166,7 +166,7 @@ export const checkboxOptions = [
             { label: "Animation", value: "Animation" },
             { label: "Game", value: "Game" },
             { label: "Chatbot", value: "Chatbot" },
-            { label: "Augented Reality", value: "Augented Reality" }
+            { label: "Augmented Reality", value: "Augmented Reality" }
         ],
     },
     {

@@ -1,0 +1,47 @@
+.profileDetailBox {
+    display: flex;
+    flex-direction: column;
+    width: 570px;
+    height: 500px;
+    background-color: white;
+    padding: 10px;
+    margin: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 2px solid #E2DFDF;
+}
+
+.profileList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.profileName {
+    font-size: 40px;
+    margin: 55px;
+    color: #A5A5A5;
+
+}
+
+.profileTitles {
+    color: #A5A5A5;
+    font-size: 20px;
+}
+
+.profileContents {
+    font-size: 20px;
+    color: #707070;
+}
+
+.profileTitles>p {
+    margin-top: 30px;
+}
+
+.profileContents>p {
+    margin-top: 30px;
+}

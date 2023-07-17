@@ -1,14 +1,14 @@
 import Students from "../assets/navLogin/students.png";
 import Teachers from "../assets/navLogin/teachers.png";
 import Esc from "../assets/navLogin/esc.png";
-import "./Signup.css";
+import "./signup.css";
 
 export default function Signup(props) {
 
     return (
-        <div className="SignupBox">
+        <div className="signupBox">
             {props.isOpen && (
-                <div className="Signup" onClick={props.onClick}>
+                <div className="signup" onClick={props.onClick}>
                     <div className='loginSignup'>
                         <img src={Students} alt='Students' />
                         <h1>Students</h1>

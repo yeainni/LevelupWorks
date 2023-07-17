@@ -1,0 +1,36 @@
+.profileEditorBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 400px;
+    background-color: white;
+    padding: 10px;
+    margin: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 2px solid #E2DFDF;
+}
+
+.studentImg {
+    width: 120px;
+    height: 120px;
+}
+
+.teacherImg {
+    width: 120px;
+    height: 120px;
+}
+
+.btnContainer {
+    padding: 5px;
+}
+
+.tempbtn {
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    color:#eeee
+}

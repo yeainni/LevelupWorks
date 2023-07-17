@@ -19,12 +19,14 @@ const StyledLink = styled(Link)`
 export default function Navbar() {
     return (
         <nav>
-            <img src={Logo} alt='Logo' width={"174px"} height={"55px"} padding-bottom={"5px"} />
+            <Link to="/">
+                <img src={Logo} alt='Logo' width={"174px"} height={"55px"} padding-bottom={"5px"} />
+            </Link>
 
             <ul>
                 <StyledLink to="/">HOME</StyledLink>
                 <StyledLink to="/projectlibrary">FEATURES</StyledLink>
-                <StyledLink to="/teacherprofile">TEACHERS</StyledLink>
+                <StyledLink to="/teacher/:id">TEACHERS</StyledLink>
             </ul>
 
             <div className='navLast'>

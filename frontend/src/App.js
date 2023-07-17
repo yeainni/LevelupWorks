@@ -1,8 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import TeacherProfile from "./pages/TeacherProfile";
 import ProjectLibrary from "./pages/ProjectLibrary";
 import StudentProfileViewer from "./pages/StudentProfileViewer";
+import TeacherProfileViewer from "./pages/TeacherProfileViewer";
+import ProjectEx from "./pages/Project";
+// import ProfileViewer from "./pages/ProfileViewer";
 
 function App() {
   return (
@@ -10,12 +12,14 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/projectlibrary" element={<ProjectLibrary />} />
+        <Route path="/projects" element={<ProjectEx />} />
 
-        <Route path="/student/">
+        <Route path="/student/:id/*" element={<StudentProfileViewer />} />
+        <Route path="/teacher/:id/*" element={<TeacherProfileViewer />} />
+
+        {/* <Route path="/student/">
           <Route path=":id/*" element={<StudentProfileViewer />} />
-        </Route>
-
-        <Route path="/teacher/teacherprofile" element={<TeacherProfile />} />
+        </Route> */}
       </Routes>
     </div >
   );

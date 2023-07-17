@@ -1,15 +1,15 @@
-import StudentProfile from "../components/StudentProfile";
+import TeacherProfile from "../components/TeacherProfile";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 
-const ProfileWrapper = styled.div`
+const ProfileContainer = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #EEEEEE;
 `;
 
-const SPwrapper = styled.div`
+const ProfileWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,13 +41,13 @@ const BackToTop = styled.div`
 `;
 
 
-export default function StudentProfileViewer() {
+export default function TeacherProfileViewer() {
     return (
-        <ProfileWrapper>
+        <ProfileContainer>
             <Navbar />
-            <SPwrapper>
-                <StudentProfile />
-            </SPwrapper>
+            <ProfileWrapper>
+                <TeacherProfile />
+            </ProfileWrapper>
             <BttBtn>
                 <BackToTop styled onClick={() => {
                     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -55,6 +55,6 @@ export default function StudentProfileViewer() {
                     BACK TO TOP </BackToTop>
             </BttBtn>
             <Footer />
-        </ProfileWrapper>
+        </ProfileContainer>
     )
 }

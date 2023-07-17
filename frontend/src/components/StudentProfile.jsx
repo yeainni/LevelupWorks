@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
-const ProfileWrapper = styled.div`
+const ProfileContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -104,14 +104,20 @@ export default function StudentProfile() {
         return <div>Loading...</div>;
     }
 
-    // const formattedDoB = students.length > 0 ? new Date(students[0].date_of_birth).toLocaleDateString() : '';
-    const formattedDoB = students.length > 0 ? new Date(students[0].date_of_birth).toISOString().slice(0, 10) : '';
+    // day/month/year
+    // const formatDoB = students.length > 0 ? new Date(students[0].date_of_birth).toLocaleDateString() : "";
+
+    const formatDoB = students.length > 0 ? new Date(students[0].date_of_birth).toLocaleDateString('en-NZ', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    }) : '';
 
 
     return (
         <div>
             {students.map((student) =>
-                <ProfileWrapper key={student.student_id}>
+                <ProfileContainer key={student.student_id}>
                     <SPimg>
                         <img src={student.profile_pic} alt={student.name} width={'175px'} />
                         <div style={{
@@ -141,7 +147,7 @@ export default function StudentProfile() {
                             </SProw>
                             <SProw>
                                 <SPhead>Date of Birth</SPhead>
-                                <SPdata>{formattedDoB}</SPdata>
+                                <SPdata>{formatDoB}</SPdata>
                             </SProw>
                             <SProw>
                                 <SPhead>Contact No</SPhead>
@@ -153,7 +159,7 @@ export default function StudentProfile() {
                             </SProw>
                         </SPtable>
                     </SPinfo>
-                </ProfileWrapper>
+                </ProfileContainer>
             )}
         </div>
     )

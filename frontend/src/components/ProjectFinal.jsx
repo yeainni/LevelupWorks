@@ -201,7 +201,6 @@ export default function ProjectFinal() {
     const projectsCount = selectShow === 'All' ? filteredDatas : filteredDatas.slice(0, parseInt(selectShow));
 
 
-
     return (
         <ProjectContainer>
             <SidebarWrapper>

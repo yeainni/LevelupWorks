@@ -20,6 +20,24 @@ app.listen(4000, () => {
     console.log(`server is running on port ${port}`);
 })
 
+
+
+
+app.get('/projects', (req, res) => {
+    pool.query('SELECT * FROM project',
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("No project to be shown");
+            } else {
+                res.send(result);
+                console.log(result)
+            }
+        });
+});
+
+
+
 app.get('/student', (req, res) => {
     pool.query('SELECT * FROM student',
         (err, result) => {
@@ -77,7 +95,7 @@ app.get('/teacher', (req, res) => {
 
 
 app.get('/teacher/:id', (req, res) => {
-    pool.query('SELECT * FROM teacher WHERE ID= ?',
+    pool.query('SELECT * FROM teacher WHERE teacher_id = ?',
         [req.params.id],
         (err, result) => {
             if (err) {
