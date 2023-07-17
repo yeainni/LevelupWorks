@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.sidebar {
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    color: #767676;
+    margin: 12vh 7vw 0 10vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.border {
+    border-bottom: 1.2px solid #767676;
+    width: 100%;
+}
+
+.heading {
+    margin-top: 3vh;
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+
+.checkbox {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    ;
+}
+
+label {
+    padding-left: 10px;
+}

@@ -23,7 +23,21 @@ app.listen(4000, () => {
 
 
 
-app.get('/projects', (req, res) => {
+app.get('/project', (req, res) => {
+    pool.query('SELECT * FROM project',
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send("No project to be shown");
+            } else {
+                res.send(result);
+                console.log(result)
+            }
+        });
+});
+
+
+app.get('/projectex', (req, res) => {
     pool.query('SELECT * FROM project',
         (err, result) => {
             if (err) {

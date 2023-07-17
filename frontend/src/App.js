@@ -3,7 +3,8 @@ import Home from "./pages/Home";
 import ProjectLibrary from "./pages/ProjectLibrary";
 import StudentProfileViewer from "./pages/StudentProfileViewer";
 import TeacherProfileViewer from "./pages/TeacherProfileViewer";
-import ProjectEx from "./pages/Project";
+import Project from "./pages/Project";
+import ProjectEx from "./sheena/ProjectEx";
 // import ProfileViewer from "./pages/ProfileViewer";
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/projectlibrary" element={<ProjectLibrary />} />
-        <Route path="/projects" element={<ProjectEx />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/projectex" element={<ProjectEx />} />
 
         <Route path="/student/:id/*" element={<StudentProfileViewer />} />
         <Route path="/teacher/:id/*" element={<TeacherProfileViewer />} />
