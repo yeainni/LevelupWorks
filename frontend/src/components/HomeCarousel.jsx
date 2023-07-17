@@ -24,6 +24,10 @@ export const HomeCarousel = () => {
     //     setSlide((slide) => (slide === 0 ? data.length - 1 : slide - 1));
     // };
 
+    const goToSlide = (index) => {
+        setSlide(index);
+    };
+
     return (
         <div className="carousel">
             {/* <BsArrowLeftCircleFill onClick={prevSlide} className="arrow arrow-left" /> */}
@@ -32,7 +36,7 @@ export const HomeCarousel = () => {
                     src={item.src}
                     alt={item.alt}
                     key={idx}
-                    className={slide === idx ? "slide" : "slide slide-hidden"}
+                    className={idx === slide ? "slide" : "slide slide-hidden"}
                 />
             ))}
             {/* <BsArrowRightCircleFill onClick={nextSlide} className="arrow arrow-right" /> */}
@@ -40,8 +44,8 @@ export const HomeCarousel = () => {
                 {data.map((_, idx) => (
                     <button
                         key={idx}
-                        className={slide === idx ? "indicator" : "indicator indicator-inactive"}
-                        onClick={() => setSlide(idx)}
+                        className={idx === slide ? "indicator" : "indicator indicator-inactive"}
+                        onClick={() => goToSlide(idx)}
                     ></button>
                 ))}
             </span>
